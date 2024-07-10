@@ -26,6 +26,7 @@ jobs:
             setup
             add java
             install java@20.0.2-zulu
+            use -g java@20.0.2-zulu
           working-directory: example
         env:
           GITHUB_ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
