@@ -34,7 +34,7 @@ pub fn r#use(args: String) -> FnResult<String> {
     helpers::setup()?;
     let stdout = dag()
         .pipeline("use")?
-        .with_exec(vec!["vfox", "use", &args])?
+        .with_exec(vec!["eval \"$(vfox activate bash)\" && vfox use", &args])?
         .stdout()?;
     Ok(stdout)
 }
@@ -44,7 +44,7 @@ pub fn u(args: String) -> FnResult<String> {
     helpers::setup()?;
     let stdout = dag()
         .pipeline("use")?
-        .with_exec(vec!["vfox", "use", &args])?
+        .with_exec(vec!["eval \"$(vfox activate bash)\" && vfox use", &args])?
         .stdout()?;
     Ok(stdout)
 }
