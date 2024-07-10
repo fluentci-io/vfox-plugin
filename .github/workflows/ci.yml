@@ -24,6 +24,7 @@ jobs:
           plugin: .
           args: |
             setup
+            add java
             install java@20.0.2-zulu
           working-directory: example
         env:

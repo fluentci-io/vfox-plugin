@@ -10,11 +10,21 @@ pub fn setup() -> FnResult<String> {
 }
 
 #[plugin_fn]
+pub fn add(args: String) -> FnResult<String> {
+    helpers::setup()?;
+    let stdout = dag()
+        .pipeline("add")?
+        .with_exec(vec!["vfox", "add", &args])?
+        .stdout()?;
+    Ok(stdout)
+}
+
+#[plugin_fn]
 pub fn install(args: String) -> FnResult<String> {
     helpers::setup()?;
     let stdout = dag()
         .pipeline("install")?
-        .with_exec(vec!["yes | vfox install", &args])?
+        .with_exec(vec!["vfox", "install", &args])?
         .stdout()?;
     Ok(stdout)
 }
@@ -44,7 +54,7 @@ pub fn i(args: String) -> FnResult<String> {
     helpers::setup()?;
     let stdout = dag()
         .pipeline("install")?
-        .with_exec(vec!["yes | vfox install", &args])?
+        .with_exec(vec!["vfox", "install", &args])?
         .stdout()?;
     Ok(stdout)
 }

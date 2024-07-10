@@ -18,6 +18,7 @@ fluentci run --wasm vfox setup
 | Name    | Description                                            |
 | ------- | ------------------------------------------------------ |
 | setup   | Download and install vfox                              |
+| add     | Add a plugin                                           |
 | install | Install a tool version [aliases: i]                    |
 | use     | Install tool version and add it to config [aliases: u] |
 
