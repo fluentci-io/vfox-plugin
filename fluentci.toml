@@ -1,0 +1,11 @@
+[package]
+authors = [
+  "Tsiry sandratraina <tsiry.sndr@fluentci.io>",
+]
+description = "CI/CD Plugin for vfox"
+keywords = [
+  "vfox",
+]
+license = "MIT"
+name = "vfox"
+version = "0.1.0"
